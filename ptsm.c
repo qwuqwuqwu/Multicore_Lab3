@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
         if (!path || !visited) {
             free(path); free(visited);
             perror("malloc");
-            return 1;
+            continue;
         }
 
         path[0] = 0; // start from 0
