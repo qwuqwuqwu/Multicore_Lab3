@@ -79,6 +79,9 @@ for n in "${CITIES_LIST[@]}"; do
         row="${n},${t},${OPTIMAL[$n]}"
         echo -n "  cities=$n  threads=$t  | "
 
+        # Warm-up run: not recorded, just to prime caches/OS scheduler
+        ./ptsm "$n" "$t" "cities${n}.txt" > /dev/null 2>&1
+
         for trial in $(seq 1 $TRIALS); do
             time_output=$( { time ./ptsm "$n" "$t" "cities${n}.txt" ; } 2>&1 >/dev/null )
             real_raw=$(echo "$time_output" | grep "^real" | awk '{print $2}')
