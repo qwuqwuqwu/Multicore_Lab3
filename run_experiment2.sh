@@ -8,10 +8,10 @@
 # Trials per scenario: 5
 # Output: experiment2_results.csv
 
-CITIES_LIST=(6 8 10 12)
+CITIES_LIST=(6 8 10 12 14)
 THREAD_LIST=(1 4)
 TRIALS=5
-CSV="experiment2_results.csv"
+CSV="experiment2_results_extend.csv"
 
 # ── 1. Compile ────────────────────────────────────────────────────────────────
 echo "========================================"
